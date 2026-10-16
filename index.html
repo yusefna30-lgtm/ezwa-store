@@ -173,7 +173,6 @@
             color: #ffffff;
         }
         
-        .btn.works .icon-box { color: #f59e0b; background: rgba(245, 158, 11, 0.12); }
         .btn.phone .icon-box { color: #60a5fa; background: rgba(96, 165, 250, 0.12); }
         .btn.whatsapp .icon-box { color: #4ade80; background: rgba(74, 222, 128, 0.12); }
         .btn.snap .icon-box { color: #facc15; background: rgba(250, 204, 21, 0.12); }
@@ -217,17 +216,6 @@
             font-weight: 700;
             margin-bottom: 16px;
             color: #d4af37;
-        }
-        .modal-text {
-            font-size: 15px;
-            color: #e5e7eb;
-            line-height: 1.8;
-            margin-bottom: 20px;
-            text-align: right;
-            background: rgba(255, 255, 255, 0.03);
-            padding: 18px;
-            border-radius: 16px;
-            border: 1px solid rgba(212, 175, 55, 0.12);
         }
         .modal-options {
             display: flex;
@@ -296,15 +284,6 @@
         </div>
 
         <div class="links-list">
-            <!-- Works Button -->
-            <button class="btn works" onclick="openModal('worksModal')">
-                <div class="btn-content">
-                    <div class="icon-box"><i class="fa-solid fa-briefcase"></i></div>
-                    <span>من أعمالنا (ابتكارات وإصدارات)</span>
-                </div>
-                <i class="fa-solid fa-chevron-left btn-arrow"></i>
-            </button>
-
             <!-- Call Button -->
             <button class="btn phone" onclick="openModal('phoneModal')">
                 <div class="btn-content">
@@ -343,17 +322,6 @@
         </div>
 
         <div class="footer-brand">DIGITAL BUSINESS CARD</div>
-    </div>
-
-    <!-- Works Modal -->
-    <div id="worksModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-title">من أعمالنا وإصداراتنا</div>
-            <div class="modal-text">
-                نقدم أزياء الشارع الفاخرة (Luxury Streetwear) المدمجة بتقنية الشريحة التفاعلية (NFC). نجمع بين أصالة النقوش التراثية وتكنولوجيا المستقبل لتقديم تجربة فريدة ومبتكرة تعكس الهوية والهندسة التفصيلية لقصات البوكس فيت.
-            </div>
-            <button class="close-modal" onclick="closeModal('worksModal')">إغلاق</button>
-        </div>
     </div>
 
     <!-- Phone Selection Modal -->
