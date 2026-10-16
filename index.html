@@ -42,34 +42,44 @@
             position: relative;
         }
 
-        /* رأس الثيم (الهيدر) ذو اللون البنفسجي والأزرق وفيه الحروف المجزأة خلفه */
+        /* رأس الثيم (الهيدر) ذو اللون البنفسجي والأزرق */
         .cover-header {
             height: 150px;
             background: linear-gradient(135deg, rgba(37, 99, 235, 0.9), rgba(124, 58, 237, 0.9), rgba(219, 39, 119, 0.9));
             position: relative;
             overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
         }
 
-        /* الحروف المجزأة المنفردة بتنسيق فني داخل الهيدر تماماً مثل خلفية الساعة */
-        .header-scattered-letters {
+        /* الحروف المجزأة بشكل عشوائي ونصف دائري خلف الهيدر تماماً مثل الصورة */
+        .scattered-letters-container {
             position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            opacity: 0.18;
             pointer-events: none;
-            font-size: 32px;
+            z-index: 1;
+            opacity: 0.22;
+        }
+
+        .s-letter {
+            position: absolute;
+            font-family: 'Amiri', serif;
             font-weight: 700;
             color: #ffffff;
-            letter-spacing: 5px;
-            padding: 0 10px;
-            z-index: 1;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.5);
         }
+
+        /* توزيع عشوائي ونصف دائري للحروف مطابقة للصورة المرفقة */
+        .l-1 { top: 15%; right: 18%; font-size: 28px; transform: rotate(-25deg); }
+        .l-2 { top: 30%; right: 30%; font-size: 22px; transform: rotate(15deg); }
+        .l-3 { top: 12%; right: 48%; font-size: 32px; transform: rotate(-10deg); }
+        .l-4 { top: 35%; right: 60%; font-size: 26px; transform: rotate(20deg); }
+        .l-5 { top: 18%; right: 75%; font-size: 30px; transform: rotate(-15deg); }
+        .l-6 { top: 50%; right: 22%; font-size: 24px; transform: rotate(35deg); }
+        .l-7 { top: 55%; right: 45%; font-size: 28px; transform: rotate(-5deg); }
+        .l-8 { top: 48%; right: 68%; font-size: 25px; transform: rotate(-20deg); }
+        .l-9 { top: 25%; right: 88%; font-size: 20px; transform: rotate(10deg); }
 
         .cover-header::after {
             content: '';
@@ -310,18 +320,18 @@
 <body>
 
     <div class="card-container">
-        <!-- الهيدر البنفسجي والأزرق وبداخله الحروف المجزأة -->
+        <!-- الهيدر الملون وبداخله الحروف المجزأة عشوائياً ونصف دائرياً -->
         <div class="cover-header">
-            <div class="header-scattered-letters">
-                <span>ر</span>
-                <span>م</span>
-                <span>ن</span>
-                <span>ل</span>
-                <span>ا</span>
-                <span>ل</span>
-                <span>ي</span>
-                <span>ب</span>
-                <span>ن</span>
+            <div class="scattered-letters-container">
+                <span class="s-letter l-1">ن</span>
+                <span class="s-letter l-2">ب</span>
+                <span class="s-letter l-3">ي</span>
+                <span class="s-letter l-4">ل</span>
+                <span class="s-letter l-5">ا</span>
+                <span class="s-letter l-6">ل</span>
+                <span class="s-letter l-7">ن</span>
+                <span class="s-letter l-8">م</span>
+                <span class="s-letter l-9">ر</span>
             </div>
         </div>
         
