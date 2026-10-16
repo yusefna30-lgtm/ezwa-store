@@ -101,6 +101,8 @@
             font-size: 15px;
             border: 1px solid rgba(255, 255, 255, 0.06);
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            width: 100%;
         }
         .btn:hover {
             background: rgba(255, 255, 255, 0.09);
@@ -133,13 +135,87 @@
             color: #ffffff;
         }
         
-        /* Custom Brand Colors for Icons */
         .btn.phone .icon-box { color: #38bdf8; background: rgba(56, 189, 248, 0.1); }
         .btn.whatsapp .icon-box { color: #22c55e; background: rgba(34, 197, 94, 0.1); }
         .btn.insta .icon-box { color: #ec4899; background: rgba(236, 72, 153, 0.1); }
         .btn.snap .icon-box { color: #facc15; background: rgba(250, 204, 21, 0.1); }
         .btn.tiktok .icon-box { color: #f8fafc; background: rgba(255, 255, 255, 0.1); }
         .btn.map .icon-box { color: #ef4444; background: rgba(239, 68, 68, 0.1); }
+
+        /* Modal Popup Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(5px);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            padding: 20px;
+        }
+        .modal.active {
+            display: flex;
+        }
+        .modal-content {
+            background: #111827;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            width: 100%;
+            max-width: 380px;
+            border-radius: 24px;
+            padding: 24px;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+            animation: scaleUp 0.3s ease;
+        }
+        @keyframes scaleUp {
+            from { transform: scale(0.9); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+        .modal-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: #ffffff;
+        }
+        .modal-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .modal-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.06);
+            color: #fff;
+            text-decoration: none;
+            padding: 14px;
+            border-radius: 14px;
+            font-weight: 600;
+            font-size: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: background 0.2s;
+        }
+        .modal-btn:hover {
+            background: rgba(255, 255, 255, 0.15);
+        }
+        .close-modal {
+            margin-top: 16px;
+            background: transparent;
+            border: none;
+            color: #94a3b8;
+            font-size: 14px;
+            cursor: pointer;
+            padding: 8px;
+        }
+        .close-modal:hover {
+            color: #ffffff;
+        }
 
         .footer-brand {
             text-align: center;
@@ -166,21 +242,23 @@
         </div>
 
         <div class="links-list">
-            <a href="tel:+966502777884" class="btn phone">
+            <!-- Call Button -->
+            <button class="btn phone" onclick="openModal('phoneModal')">
                 <div class="btn-content">
                     <div class="icon-box"><i class="fa-solid fa-phone"></i></div>
-                    <span>اتصال مباشر (1)</span>
+                    <span>اتصال مباشر</span>
                 </div>
                 <i class="fa-solid fa-chevron-left btn-arrow"></i>
-            </a>
+            </button>
 
-            <a href="https://wa.me/966502777884" class="btn whatsapp" target="_blank">
+            <!-- WhatsApp Button -->
+            <button class="btn whatsapp" onclick="openModal('waModal')">
                 <div class="btn-content">
                     <div class="icon-box"><i class="fa-brands fa-whatsapp"></i></div>
-                    <span>واتساب (1)</span>
+                    <span>مراسلة واتساب</span>
                 </div>
                 <i class="fa-solid fa-chevron-left btn-arrow"></i>
-            </a>
+            </button>
 
             <a href="https://www.instagram.com/alnamer.nabeel?rpxt=bnV2Nm9vNGxheno5" class="btn insta" target="_blank">
                 <div class="btn-content">
@@ -218,5 +296,42 @@
         <div class="footer-brand">DIGITAL BUSINESS CARD</div>
     </div>
 
+    <!-- Phone Selection Modal -->
+    <div id="phoneModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-title">اختر رقم الاتصال</div>
+            <div class="modal-options">
+                <a href="tel:+966502777884" class="modal-btn"><i class="fa-solid fa-phone" style="color:#38bdf8;"></i> +966 50 277 7884</a>
+                <a href="tel:+9665605664719" class="modal-btn"><i class="fa-solid fa-phone" style="color:#38bdf8;"></i> +966 56 056 64719</a>
+            </div>
+            <button class="close-modal" onclick="closeModal('phoneModal')">إلغاء</button>
+        </div>
+    </div>
+
+    <!-- WhatsApp Selection Modal -->
+    <div id="waModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-title">اختر رقم الواتساب</div>
+            <div class="modal-options">
+                <a href="https://wa.me/966502777884" target="_blank" class="modal-btn"><i class="fa-brands fa-whatsapp" style="color:#22c55e;"></i> +966 50 277 7884</a>
+                <a href="https://wa.me/9665605664719" target="_blank" class="modal-btn"><i class="fa-brands fa-whatsapp" style="color:#22c55e;"></i> +966 56 056 64719</a>
+            </div>
+            <button class="close-modal" onclick="closeModal('waModal')">إلغاء</button>
+        </div>
+    </div>
+
+    <script>
+        function openModal(modalId) {
+            document.getElementById(modalId).classList.add('active');
+        }
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.remove('active');
+        }
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.classList.remove('active');
+            }
+        }
+    </script>
 </body>
 </html>
