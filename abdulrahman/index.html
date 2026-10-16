@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عبدالرحمن نبيل | بطاقة الأعمال الرقمية</title>
+    <!-- استيراد الخط التراثي الفاخر -->
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Amiri', serif;
+        }
+        body {
+            background: #050203;
+            color: #f3f4f6;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            background-image: 
+                radial-gradient(circle at 20% 20%, rgba(120, 18, 30, 0.25) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(180, 130, 70, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(20, 5, 8, 0.95) 0%, #050203 100%);
+        }
+        
+        .card-container {
+            width: 100%;
+            max-width: 440px;
+            background: rgba(18, 8, 11, 0.75);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 36px;
+            overflow: hidden;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.9), inset 0 1px 0 rgba(212, 175, 55, 0.25);
+            padding-bottom: 35px;
+            position: relative;
+        }
+
+        .cover-header {
+            height: 140px;
+            background: linear-gradient(135deg, #4a0e17 0%, #7c1525 50%, #b48646 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cover-header::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(to bottom, rgba(255,255,255,0.12), transparent);
+        }
+
+        .profile-section {
+            padding: 0 24px;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            margin-top: -65px;
+        }
+        .avatar-box {
+            width: 110px;
+            height: 110px;
+            margin: 0 auto;
+            border-radius: 50%;
+            background: rgba(18, 8, 11, 0.95);
+            padding: 4px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.7);
+            border: 2px solid rgba(212, 175, 55, 0.4);
+            backdrop-filter: blur(10px);
+        }
+        .avatar-inner {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #2a080d, #12080b);
+            color: #d4af37;
+            font-size: 44px;
+            font-weight: 700;
+        }
+        
+        .name {
+            font-family: 'Amiri', serif;
+            font-size: 38px;
+            font-weight: 700;
+            margin-top: 14px;
+            color: #ffffff;
+            letter-spacing: 0.5px;
+            text-shadow: 0 2px 20px rgba(212, 175, 55, 0.5);
+        }
+
+        .title {
+            font-size: 16px;
+            color: #d4af37;
+            margin-top: 4px;
+            font-weight: 700;
+        }
+
+        .links-list {
+            padding: 26px 24px 0 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            color: #ffffff;
+            text-decoration: none;
+            padding: 16px 20px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 16px;
+            border: 1px solid rgba(212, 175, 55, 0.15);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            width: 100%;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+        .btn:hover {
+            background: rgba(212, 175, 55, 0.08);
+            transform: translateY(-3px);
+            border-color: rgba(212, 175, 55, 0.4);
+            box-shadow: 0 12px 30px rgba(180, 134, 70, 0.25);
+        }
+        .btn-content {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        .icon-box {
+            width: 40px;
+            height: 40px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            background: rgba(212, 175, 55, 0.08);
+            border: 1px solid rgba(212, 175, 55, 0.1);
+        }
+        .btn-arrow {
+            font-size: 12px;
+            color: #b48646;
+            transition: transform 0.2s;
+        }
+        .btn:hover .btn-arrow {
+            transform: translateX(-3px);
+            color: #ffffff;
+        }
+        
+        .btn.phone .icon-box { color: #60a5fa; background: rgba(96, 165, 250, 0.12); }
+        .btn.whatsapp .icon-box { color: #4ade80; background: rgba(74, 222, 128, 0.12); }
+        .btn.snap .icon-box { color: #facc15; background: rgba(250, 204, 21, 0.12); }
+        .btn.map .icon-box { color: #f87171; background: rgba(248, 113, 113, 0.12); }
+
+        .footer-brand {
+            text-align: center;
+            margin-top: 26px;
+            font-size: 12px;
+            color: #b48646;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            font-weight: 700;
+            position: relative;
+            z-index: 2;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card-container">
+        <div class="cover-header"></div>
+        
+        <div class="profile-section">
+            <div class="avatar-box">
+                <div class="avatar-inner">ع</div>
+            </div>
+            <div class="name">عبدالرحمن نبيل</div>
+            <div class="title">بطاقة الأعمال الرقمية</div>
+        </div>
+
+        <div class="links-list">
+            <!-- Call Button -->
+            <a href="tel:+966536655359" class="btn phone">
+                <div class="btn-content">
+                    <div class="icon-box"><i class="fa-solid fa-phone"></i></div>
+                    <span>اتصال مباشر</span>
+                </div>
+                <i class="fa-solid fa-chevron-left btn-arrow"></i>
+            </a>
+
+            <!-- WhatsApp Button -->
+            <a href="https://wa.me/966536655359" class="btn whatsapp" target="_blank">
+                <div class="btn-content">
+                    <div class="icon-box"><i class="fa-brands fa-whatsapp"></i></div>
+                    <span>مراسلة واتساب</span>
+                </div>
+                <i class="fa-solid fa-chevron-left btn-arrow"></i>
+            </a>
+
+            <!-- Snapchat Button -->
+            <a href="https://snapchat.com/t/1KgIjF6L" class="btn snap" target="_blank">
+                <div class="btn-content">
+                    <div class="icon-box"><i class="fa-brands fa-snapchat"></i></div>
+                    <span>سناب شات</span>
+                </div>
+                <i class="fa-solid fa-chevron-left btn-arrow"></i>
+            </a>
+
+            <!-- Map Button -->
+            <a href="https://maps.app.goo.gl/LcrQDjX7453h4cqN8?g_st=ac" class="btn map" target="_blank">
+                <div class="btn-content">
+                    <div class="icon-box"><i class="fa-solid fa-location-dot"></i></div>
+                    <span>موقع الخرائط</span>
+                </div>
+                <i class="fa-solid fa-chevron-left btn-arrow"></i>
+            </a>
+        </div>
+
+        <div class="footer-brand">DIGITAL BUSINESS CARD</div>
+    </div>
+
+</body>
+</html>
