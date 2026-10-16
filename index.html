@@ -135,6 +135,7 @@
             color: #ffffff;
         }
         
+        .btn.about .icon-box { color: #a855f7; background: rgba(168, 85, 247, 0.1); }
         .btn.phone .icon-box { color: #38bdf8; background: rgba(56, 189, 248, 0.1); }
         .btn.whatsapp .icon-box { color: #22c55e; background: rgba(34, 197, 94, 0.1); }
         .btn.insta .icon-box { color: #ec4899; background: rgba(236, 72, 153, 0.1); }
@@ -181,6 +182,17 @@
             margin-bottom: 16px;
             color: #ffffff;
         }
+        .about-text {
+            font-size: 14px;
+            color: #cbd5e1;
+            line-height: 1.7;
+            margin-bottom: 20px;
+            text-align: right;
+            background: rgba(255, 255, 255, 0.03);
+            padding: 16px;
+            border-radius: 14px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
         .modal-options {
             display: flex;
             flex-direction: column;
@@ -205,13 +217,14 @@
             background: rgba(255, 255, 255, 0.15);
         }
         .close-modal {
-            margin-top: 16px;
+            margin-top: 10px;
             background: transparent;
             border: none;
             color: #94a3b8;
             font-size: 14px;
             cursor: pointer;
             padding: 8px;
+            width: 100%;
         }
         .close-modal:hover {
             color: #ffffff;
@@ -238,10 +251,19 @@
                 <div class="avatar-inner">ن</div>
             </div>
             <div class="name">نبيل النمر</div>
-            <div class="title">رائد أعمال ومستشار تسويقي</div>
+            <div class="title">اختصاصي تسويق ومصمم جرافيك</div>
         </div>
 
         <div class="links-list">
+            <!-- About Button -->
+            <button class="btn about" onclick="openModal('aboutModal')">
+                <div class="btn-content">
+                    <div class="icon-box"><i class="fa-solid fa-user-tie"></i></div>
+                    <span>من نحن (نبذة تعريفية)</span>
+                </div>
+                <i class="fa-solid fa-chevron-left btn-arrow"></i>
+            </button>
+
             <!-- Call Button -->
             <button class="btn phone" onclick="openModal('phoneModal')">
                 <div class="btn-content">
@@ -294,6 +316,17 @@
         </div>
 
         <div class="footer-brand">DIGITAL BUSINESS CARD</div>
+    </div>
+
+    <!-- About Modal -->
+    <div id="aboutModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-title">نبذة تعريفية</div>
+            <div class="about-text">
+                اختصاصي تسويق وشغوف في التصميم وابتكار الأفكار. صاحب السبق في ابتكار دمج تقنية NFC بالتيشيرت Streetwear بوكس فيت في السعودية والشرق الأوسط.
+            </div>
+            <button class="close-modal" onclick="closeModal('aboutModal')">إغلاق</button>
+        </div>
     </div>
 
     <!-- Phone Selection Modal -->
