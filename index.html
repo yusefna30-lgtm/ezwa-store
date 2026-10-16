@@ -177,7 +177,6 @@
             color: #ffffff;
         }
         
-        .btn.about .icon-box { color: #d4af37; background: rgba(212, 175, 55, 0.12); }
         .btn.phone .icon-box { color: #60a5fa; background: rgba(96, 165, 250, 0.12); }
         .btn.whatsapp .icon-box { color: #4ade80; background: rgba(74, 222, 128, 0.12); }
         .btn.snap .icon-box { color: #facc15; background: rgba(250, 204, 21, 0.12); }
@@ -221,17 +220,6 @@
             font-weight: 700;
             margin-bottom: 16px;
             color: #d4af37;
-        }
-        .about-text {
-            font-size: 15px;
-            color: #e5e7eb;
-            line-height: 1.8;
-            margin-bottom: 20px;
-            text-align: right;
-            background: rgba(255, 255, 255, 0.03);
-            padding: 18px;
-            border-radius: 16px;
-            border: 1px solid rgba(212, 175, 55, 0.12);
         }
         .modal-options {
             display: flex;
@@ -300,15 +288,6 @@
         </div>
 
         <div class="links-list">
-            <!-- About Button -->
-            <button class="btn about" onclick="openModal('aboutModal')">
-                <div class="btn-content">
-                    <div class="icon-box"><i class="fa-solid fa-user-tie"></i></div>
-                    <span>من نحن (نبذة تعريفية)</span>
-                </div>
-                <i class="fa-solid fa-chevron-left btn-arrow"></i>
-            </button>
-
             <!-- Call Button -->
             <button class="btn phone" onclick="openModal('phoneModal')">
                 <div class="btn-content">
@@ -347,17 +326,6 @@
         </div>
 
         <div class="footer-brand">DIGITAL BUSINESS CARD</div>
-    </div>
-
-    <!-- About Modal -->
-    <div id="aboutModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-title">نبذة تعريفية</div>
-            <div class="about-text">
-                اختصاصي تسويق وشغوف في التصميم وابتكار الأفكار. صاحب السبق في ابتكار دمج تقنية NFC بالتيشيرت Streetwear بوكس فيت في السعودية والشرق الأوسط.
-            </div>
-            <button class="close-modal" onclick="closeModal('aboutModal')">إغلاق</button>
-        </div>
     </div>
 
     <!-- Phone Selection Modal -->
