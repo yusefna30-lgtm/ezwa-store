@@ -69,22 +69,18 @@
             margin: 0 auto;
             border-radius: 50%;
             background: rgba(18, 8, 11, 0.95);
-            padding: 4px;
+            padding: 3px;
             box-shadow: 0 15px 30px rgba(0,0,0,0.7);
             border: 2px solid rgba(212, 175, 55, 0.4);
             backdrop-filter: blur(10px);
+            overflow: hidden;
         }
-        .avatar-inner {
+        .avatar-box img {
             width: 100%;
             height: 100%;
+            object-fit: cover;
             border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, #2a080d, #12080b);
-            color: #d4af37;
-            font-size: 44px;
-            font-weight: 700;
+            display: block;
         }
         
         .name {
@@ -177,6 +173,7 @@
             color: #ffffff;
         }
         
+        .btn.works .icon-box { color: #f59e0b; background: rgba(245, 158, 11, 0.12); }
         .btn.phone .icon-box { color: #60a5fa; background: rgba(96, 165, 250, 0.12); }
         .btn.whatsapp .icon-box { color: #4ade80; background: rgba(74, 222, 128, 0.12); }
         .btn.snap .icon-box { color: #facc15; background: rgba(250, 204, 21, 0.12); }
@@ -220,6 +217,17 @@
             font-weight: 700;
             margin-bottom: 16px;
             color: #d4af37;
+        }
+        .modal-text {
+            font-size: 15px;
+            color: #e5e7eb;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            text-align: right;
+            background: rgba(255, 255, 255, 0.03);
+            padding: 18px;
+            border-radius: 16px;
+            border: 1px solid rgba(212, 175, 55, 0.12);
         }
         .modal-options {
             display: flex;
@@ -279,15 +287,24 @@
         
         <div class="profile-section">
             <div class="avatar-box">
-                <div class="avatar-inner">ن</div>
+                <img src="ezwa-logo-diamond.png" alt="شعار عزوة الماسي">
             </div>
-            <!-- الاسم بالخط التراثي الفخم المطابق للمخطوطة -->
+            <!-- الاسم بالخط التراثي الفخم -->
             <div class="name">نبيل النمر</div>
             <div class="title">اختصاصي تسويق ومصمم جرافيك</div>
             <div class="bio-badge">✨ أول من ابتكر دمج تقنية NFC بالتيشيرت Streetwear بوكس فيت</div>
         </div>
 
         <div class="links-list">
+            <!-- Works Button -->
+            <button class="btn works" onclick="openModal('worksModal')">
+                <div class="btn-content">
+                    <div class="icon-box"><i class="fa-solid fa-briefcase"></i></div>
+                    <span>من أعمالنا (ابتكارات وإصدارات)</span>
+                </div>
+                <i class="fa-solid fa-chevron-left btn-arrow"></i>
+            </button>
+
             <!-- Call Button -->
             <button class="btn phone" onclick="openModal('phoneModal')">
                 <div class="btn-content">
@@ -326,6 +343,20 @@
         </div>
 
         <div class="footer-brand">DIGITAL BUSINESS CARD</div>
+    </div>
+
+    <!-- Works Modal -->
+    <div id="worksModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-title">من أعمالنا وإصداراتنا</div>
+            <div class="modal-text">
+                نقدم أزياء الشارع الفاخرة (Luxury Streetwear) المدمجة بتقنية الشريحة التفاعلية (NFC). نجمع بين أصالة النقوش التراثية وتكنولوجيا المستقبل لتقديم تجربة تسوق تفاعلية لا تُنسى.
+            </div>
+            <a href="https://ezwa.net/" target="_blank" class="modal-btn" style="background: linear-gradient(135deg, #7c1525, #b48646); color: #fff;">
+                <i class="fa-solid fa-bag-shopping"></i> تصفح متجرنا الإلكتروني
+            </a>
+            <button class="close-modal" onclick="closeModal('worksModal')">إغلاق</button>
+        </div>
     </div>
 
     <!-- Phone Selection Modal -->
