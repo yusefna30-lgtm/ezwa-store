@@ -4,13 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>نبيل النمر | بطاقة الأعمال الرقمية</title>
+    <!-- استيراد خط عارفي أو خط عربي فخم من Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,750;1,700&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-family: 'Tajawal', sans-serif;
         }
         body {
             background: #050811;
@@ -70,17 +72,19 @@
             font-weight: 700;
         }
         .name {
-            font-size: 24px;
+            font-family: 'Amiri', serif; /* خط عربي فخم وراقي للاسم */
+            font-size: 32px;
             font-weight: 700;
             margin-top: 14px;
             color: #ffffff;
-            letter-spacing: -0.3px;
+            letter-spacing: 0.5px;
+            text-shadow: 0 2px 10px rgba(255, 255, 255, 0.15);
         }
         .title {
             font-size: 14px;
             color: #94a3b8;
             margin-top: 6px;
-            font-weight: 400;
+            font-weight: 500;
         }
         .links-list {
             padding: 24px 24px 0 24px;
@@ -138,9 +142,7 @@
         .btn.about .icon-box { color: #a855f7; background: rgba(168, 85, 247, 0.1); }
         .btn.phone .icon-box { color: #38bdf8; background: rgba(56, 189, 248, 0.1); }
         .btn.whatsapp .icon-box { color: #22c55e; background: rgba(34, 197, 94, 0.1); }
-        .btn.insta .icon-box { color: #ec4899; background: rgba(236, 72, 153, 0.1); }
         .btn.snap .icon-box { color: #facc15; background: rgba(250, 204, 21, 0.1); }
-        .btn.tiktok .icon-box { color: #f8fafc; background: rgba(255, 255, 255, 0.1); }
         .btn.map .icon-box { color: #ef4444; background: rgba(239, 68, 68, 0.1); }
 
         /* Modal Popup Styles */
@@ -282,14 +284,7 @@
                 <i class="fa-solid fa-chevron-left btn-arrow"></i>
             </button>
 
-            <a href="https://www.instagram.com/alnamer.nabeel?rpxt=bnV2Nm9vNGxheno5" class="btn insta" target="_blank">
-                <div class="btn-content">
-                    <div class="icon-box"><i class="fa-brands fa-instagram"></i></div>
-                    <span>إنستغرام</span>
-                </div>
-                <i class="fa-solid fa-chevron-left btn-arrow"></i>
-            </a>
-
+            <!-- Snapchat Button -->
             <a href="https://www.snapchat.com/add/nabilalnamer?share_id=9_DBxLFvhbY&locale=ar-SA" class="btn snap" target="_blank">
                 <div class="btn-content">
                     <div class="icon-box"><i class="fa-brands fa-snapchat"></i></div>
@@ -298,14 +293,7 @@
                 <i class="fa-solid fa-chevron-left btn-arrow"></i>
             </a>
 
-            <a href="https://www.tiktok.com/@ana4na1?_r=1&_t=ZS-9AbFxL8bQuH" class="btn tiktok" target="_blank">
-                <div class="btn-content">
-                    <div class="icon-box"><i class="fa-brands fa-tiktok"></i></div>
-                    <span>تيك توك</span>
-                </div>
-                <i class="fa-solid fa-chevron-left btn-arrow"></i>
-            </a>
-
+            <!-- Map Button -->
             <a href="https://maps.app.goo.gl/LcrQDjX7453h4cqN8?g_st=ac" class="btn map" target="_blank">
                 <div class="btn-content">
                     <div class="icon-box"><i class="fa-solid fa-location-dot"></i></div>
